@@ -1,9 +1,17 @@
-import users from "../users.js"
+const decrementButton = document.querySelector('button[data-action = "decrement"]')
+const incrementButton = document.querySelector('button[data-action = "increment"]')
+const counter = document.querySelector("#value")
+let x = 0
+counter.textContent = x
+// const addOne = () =>  console.log(x);
+const addOne = function () {
+    // console.log(x)
+    // console.log(counter.textContent)
 
-// const getInactiveUsers = function (users) {
-//     return users.filter(function (user) {
-//         return !user.isActive
-//     })
-// }
-const getInactiveUsers = (users) => users.filter((user) => !user.isActive)
-console.log(getInactiveUsers(users)) // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+    console.log(Number(counter.textContent) + 1)
+}
+const removeOne = () => (x -= 1)
+incrementButton.addEventListener("click", addOne)
+decrementButton.addEventListener("click", removeOne)
+counter.textContent = x
+console.log(x)
