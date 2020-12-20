@@ -1,10 +1,14 @@
-import users from "../users.js"
+const ingredients = ["Картошка", "Грибы", "Чеснок", "Помидоры", "Зелень", "Приправы"]
 
-// const getUsersWithEyeColor = function (users, color) {
-//     return users.filter(function (user) {
-//         return user.eyeColor === color
-//     })
-// }
-const getUsersWithEyeColor = (users, color) => users.filter((user) => user.eyeColor === color)
-
-console.log(getUsersWithEyeColor(users, "blue")) // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
+const makeListItem = function (arr) {
+    const listItemArr = []
+    const ingredientsList = document.querySelector("#ingredients")
+    arr.forEach(function (item) {
+        const listItem = document.createElement(`li`)
+        listItem.textContent = item
+        listItemArr.push(listItem)
+    })
+    ingredientsList.append(...listItemArr)
+    console.log(ingredientsList)
+}
+makeListItem(ingredients)

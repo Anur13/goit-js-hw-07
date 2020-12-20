@@ -1,20 +1,30 @@
-import users from "../users.js"
+const images = [
+    {
+        url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        alt: "White and Black Long Fur Cat",
+    },
+    {
+        url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+    },
+    {
+        url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        alt: "Group of Horses Running",
+    },
+]
 
-// const getUsersWithGender = function (arr, gender) {
-//     return arr
-//         .filter(function (user) {
-//             return user.gender === gender
-//         })
-//         .map(function (user) {
-//             return user.name
-//         })
-// }
-const getUsersWithGender = (users, gender) => users.filter((user) => user.gender === gender).map((user) => user.name)
-
-console.log(getUsersWithGender(users, "male")) // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
-
-// employees.map(emp => {
-//     return {
-//         name: emp.name,
-//         age: getAge(emp.birthDate)
-// }).filter(emp => emp.age > 30)
+const makeListItem = function (arr) {
+    const itemsArray = []
+    const galerryList = document.querySelector("#gallery")
+    arr.forEach(function (item) {
+        const listItem = document.createElement("li")
+        const image = document.createElement("img")
+        image.src = item.url
+        image.alt = item.alt
+        listItem.append(image)
+        itemsArray.push(listItem)
+    })
+    galerryList.append(...itemsArray)
+    console.log(galerryList)
+}
+makeListItem(images)
