@@ -1,17 +1,32 @@
 const decrementButton = document.querySelector('button[data-action = "decrement"]')
 const incrementButton = document.querySelector('button[data-action = "increment"]')
 const counter = document.querySelector("#value")
-let x = 0
-counter.textContent = x
+let counterValue = 0
 // const addOne = () =>  console.log(x);
-const addOne = function () {
-    // console.log(x)
-    // console.log(counter.textContent)
+// const addOne = function () {
+//     counterValue += 1
+//     counter.textContent = counterValue
+//     return counter.textContent
+// }
+// const removeOne = function () {
+//     counterValue -= 1
 
-    console.log(Number(counter.textContent) + 1)
+//     counter.textContent = counterValue
+//     return counter.textContent
+// }
+// incrementButton.addEventListener("click", addOne)
+// decrementButton.addEventListener("click", removeOne)
+
+const addOne = function () {
+    counterValue += 1
+    counter.textContent = counterValue
+    return counter.textContent
 }
-const removeOne = () => (x -= 1)
+const removeOne = function () {
+    counterValue -= 1
+
+    counter.textContent = counterValue
+    return counter.textContent
+}
 incrementButton.addEventListener("click", addOne)
 decrementButton.addEventListener("click", removeOne)
-counter.textContent = x
-console.log(x)

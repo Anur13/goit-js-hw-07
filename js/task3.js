@@ -16,6 +16,8 @@ const images = [
 const makeListItem = function (arr) {
     const itemsArray = []
     const galerryList = document.querySelector("#gallery")
+    console.dir(galerryList)
+
     arr.forEach(function (item) {
         const listItem = document.createElement("li")
         const image = document.createElement("img")

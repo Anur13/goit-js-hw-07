@@ -1,20 +1,11 @@
-import users from "../users.js"
-
-// const getUsersWithAge = function (users, min, max) {
-//     return users
-//         .filter(function (user) {
-//             return user.age > min && user.age < max
-//         })
-//         .sort(function (a, b) {
-//             return a.age - b.age
-//         })
-// }
-
-const getUsersWithAge = (users, min, max) => users.filter((user) => user.age > min && user.age < max).sort((a, b) => a.age - b.age)
-
-// твой код
-
-console.log(getUsersWithAge(users, 20, 30)) // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
-
-console.log(getUsersWithAge(users, 30, 40))
-// [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
+const validationInputRef = document.querySelector("#validation-input")
+validationInputRef.addEventListener("blur", event)
+function event(action) {
+    if (action.target.value.length === Number(validationInputRef.dataset.length)) {
+        validationInputRef.classList.remove("invalid")
+        validationInputRef.classList.add("valid")
+    } else {
+        validationInputRef.classList.remove("valid")
+        validationInputRef.classList.add("invalid")
+    }
+}

@@ -9,6 +9,6 @@ const makeListItem = function (arr) {
         listItemArr.push(listItem)
     })
     ingredientsList.append(...listItemArr)
-    console.log(ingredientsList)
+    // console.log(ingredientsList)
 }
 makeListItem(ingredients)
