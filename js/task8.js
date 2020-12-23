@@ -2,7 +2,7 @@ const controlsRef = document.querySelector("#controls")
 const inputRef = controlsRef.querySelector("input")
 const renderBtnRef = document.querySelector("[data-action=render]")
 const destroyBtnRef = document.querySelector("[data-action=destroy]")
-console.log(inputRef.textContent)
+// console.log(inputRef.textContent)
 const boxesRef = document.querySelector("#boxes")
 renderBtnRef.addEventListener("click", createDiv)
 function createDiv() {
